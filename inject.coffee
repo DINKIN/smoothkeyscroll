@@ -60,7 +60,7 @@ scroll = (timestamp) ->
   currentFrame = requestAnimationFrame(scroll)
   y = if moving.Down then speed else if moving.Up then -speed
   x = if moving.Right then speed else if moving.Left then -speed
-  window.scrollBy x, y if x or y
+  window.scrollBy(x, y) if x or y
 
 window.addEventListener("keydown", processKeyEvent, false)
 window.addEventListener("keyup", processKeyEvent, false)
