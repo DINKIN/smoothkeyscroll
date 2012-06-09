@@ -8,63 +8,62 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
     <style type="text/css">
+    
         body {
             width: 800px;
             margin: 100px auto;
             font-family: museo;
             font-size: 20px;
-            background: url(http://subtlepatterns.com/patterns/concrete_wall.png);
             /*color: #1c1c1c;*/
             /*text-shadow:0 1px 0 #5E5E5E;*/
             color: hsl(0, 0%, 60%);
             text-shadow: 0 2px 2px #000;
+            background: url(http://subtlepatterns.com/patterns/concrete_wall.png);
         }
         h1{
             font-size: 80px;            
         }
-        img {
+
+        #instructions {
+            margin:  100px 0 0 0;
+        }
+        img.fixie {
             width: 800px;
             height: 400px;
             margin: 40px 0px;
         }
+
+        
+        ul {
+            padding: 0 0 0 20px;
+        }
+
     </style>
 
 </head>
 <body>
-<h1 class="fixie"></h1>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
+<h1>Smooth Key Scroll</h1>
 
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
+<p>Smooth Key Scroll is a chromium extension which uses the new requestAnimationFrame API to smooth your ride.</p>
+<p>Movement smoothness is favored over velocity constancy. Results may vary depending on browser/hardware performance and window dimensions.</p>
 
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
-<p class="fixie"></p> <img class="fixie"></img>
+<div id="instructions">
+    <h2 >Give it a ride</h2>
+    <ul>
+        <li>Directional keys to scroll: Up, Down, Left, Right</li></li>
+        <li>Modifier keys to change the speed: Option (alt), Control (ctrl), Command (Meta)</li></li>
+    </ul>
+</div>
 
+<script type="text/javascript">
+
+    for (var i = 0; i < 5; i++) {
+        document.body.appendChild(document.createElement('img')).className = "fixie";
+        for (var e = 0; e < 5; e++) {
+            document.body.appendChild(document.createElement('p')).className = "fixie";
+        }
+    }
+</script>
 
 <script type="text/javascript" src="https://raw.github.com/rthprog/fixie/master/fixie_min.js"></script>
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
