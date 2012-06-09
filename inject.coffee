@@ -1,7 +1,7 @@
 window.requestAnimationFrame ?= window.webkitRequestAnimationFrame
 window.cancelAnimationFrame ?= window.webkitCancelAnimationFrame
 
-speeds = 
+speeds =
   Normal: 5
   Control: 1
   Alt: 20
@@ -9,13 +9,13 @@ speeds =
 
 speed = speeds.Normal
 
-oposite = 
+oposite =
   Up: "Down"
   Down: "Up"
   Left: "Right"
   Right: "Left"
 
-moving = 
+moving =
   Up: no
   Down: no
   Left: no
@@ -29,7 +29,7 @@ processKeyEvent = (event) ->
     when "Up", "Down", "Left", "Right"
       if isTryingToScroll(event)
         direction = event.keyIdentifier
-        if not moving[direction] and keyState is on 
+        if not moving[direction] and keyState is on
           startMoving(direction)
         else if keyState is off
           stopMoving(direction)
@@ -37,7 +37,7 @@ processKeyEvent = (event) ->
       speed = if keyState is on then speeds[event.keyIdentifier] else speeds.Normal
 
 isTryingToScroll = (event) ->
-  return no if event.target.isContentEditable 
+  return no if event.target.isContentEditable
   return no if event.defaultPrevented
   return no if /input|textarea|select|embed/i.test event.target.nodeName
   return no if speed == 0
@@ -53,7 +53,7 @@ startMoving = (direction) ->
   # currentFrame ?= setInterval(scroll, 15) o
 
 stopMoving = (direction) ->
-  moving[direction] = false 
+  moving[direction] = false
   currentFrame = cancelAnimationFrame(currentFrame) unless isScrolling()
   # currentFrame = cancelInterval(currentFrame) unless isScrolling()
 
