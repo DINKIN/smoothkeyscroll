@@ -5,7 +5,7 @@ speeds =
   Normal: 5
   Control: 1
   Alt: 20
-  Meta: 9999999
+  Meta: 0
 
 speed = speeds.Normal
 
@@ -40,6 +40,7 @@ isTryingToScroll = (event) ->
   return no if event.target.isContentEditable 
   return no if event.defaultPrevented
   return no if /input|textarea|select|embed/i.test event.target.nodeName
+  return no if speed == 0
   event.preventDefault()
   yes
 
