@@ -64,3 +64,10 @@ scroll = (timestamp) ->
 
 window.addEventListener("keydown", processKeyEvent, false)
 window.addEventListener("keyup", processKeyEvent, false)
+
+window.onblur = ->
+  stopMoving("Up")
+  stopMoving("Down")
+  stopMoving("Left")
+  stopMoving("Right")
+  speed = speeds.Normal
