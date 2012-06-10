@@ -1,6 +1,7 @@
 [Smooth Key Scroll](http://chrome.google.com/webstore/detail/gphmhpfbknciemgfnfhjapilmcaecljh)
 ==================
 Jerky scroll? No more.
+
 Every other extension seems to have hiccups when used with the keyboard; it shouldn't. Ignoring key repeat rate, Smooth Key Scroll provides a smooth and responsive scrolling experience with the help of experimental browser APIs like requestAnimationFrame.
 
 Instructions
