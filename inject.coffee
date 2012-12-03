@@ -52,6 +52,7 @@ processKeyEvent = (event) ->
 # Do not scroll if user is editing text, playing a game or something else
 shouldScroll = (event) ->
   return no if event.target.isContentEditable
+  return no if event.target.type is 'application/x-shockwave-flash'
   return no if event.defaultPrevented
   return no if /input|textarea|select|embed/i.test event.target.nodeName
   return no if currentSpeed is 0
