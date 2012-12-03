@@ -7,7 +7,7 @@ speeds =
   Alt: 20
   Meta: 0
 
-speed = speeds.Normal
+currentSpeed = speeds.Normal
 
 # read options and update speeds
 chrome.storage.local.get(null, (options) ->
@@ -35,52 +35,56 @@ moving =
 
 currentFrame = null
 
+# Process all keyup and keydown events
 processKeyEvent = (event) ->
-  keyState = if event.type == "keydown" then on else off
+  keyState = if event.type is "keydown" then on else off
   switch event.keyIdentifier
     when "Up", "Down", "Left", "Right"
-      if isTryingToScroll(event)
+      if shouldScroll(event)
         direction = event.keyIdentifier
         if not moving[direction] and keyState is on
           startMoving(direction)
         else if keyState is off
           stopMoving(direction)
     when "Control", "Alt", "Meta"
-      speed = if keyState is on then speeds[event.keyIdentifier] else speeds.Normal
+      currentSpeed = if keyState is on then speeds[event.keyIdentifier] else speeds.Normal
 
-isTryingToScroll = (event) ->
+# Do not scroll if user is editing text, playing a game or something else
+shouldScroll = (event) ->
   return no if event.target.isContentEditable
   return no if event.defaultPrevented
   return no if /input|textarea|select|embed/i.test event.target.nodeName
-  return no if speed == 0
+  return no if currentSpeed is 0
   event.preventDefault()
   yes
 
-isScrolling = -> moving.Up or moving.Down or moving.Left or moving.Right
+isMovingAny = -> moving.Up or moving.Down or moving.Left or moving.Right
 
 startMoving = (direction) ->
   moving[direction] = true
   moving[oposite[direction]] = false
-  currentFrame ?= requestAnimationFrame(scroll)
-  # currentFrame ?= setInterval(scroll, 15) o
+  currentFrame ?= requestAnimationFrame(move)
 
 stopMoving = (direction) ->
   moving[direction] = false
-  currentFrame = cancelAnimationFrame(currentFrame) unless isScrolling()
-  # currentFrame = cancelInterval(currentFrame) unless isScrolling()
+  currentFrame = cancelAnimationFrame(currentFrame) unless isMovingAny()
 
-scroll = (timestamp) ->
-  currentFrame = requestAnimationFrame(scroll)
-  y = if moving.Down then speed else if moving.Up then -speed
-  x = if moving.Right then speed else if moving.Left then -speed
+move = ->
+  currentFrame = requestAnimationFrame(move)
+  y = if moving.Down then currentSpeed else if moving.Up then -currentSpeed
+  x = if moving.Right then currentSpeed else if moving.Left then -currentSpeed
   window.scrollBy(x, y) if x or y
 
+
+# Setup event listeners
 window.addEventListener("keydown", processKeyEvent, false)
 window.addEventListener("keyup", processKeyEvent, false)
 
+
+# Stop moving and reset speed when user changes to a different application or tab
 window.onblur = ->
   stopMoving("Up")
   stopMoving("Down")
   stopMoving("Left")
   stopMoving("Right")
-  speed = speeds.Normal
+  currentSpeed = speeds.Normal
