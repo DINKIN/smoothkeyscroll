@@ -9,6 +9,18 @@ speeds =
 
 speed = speeds.Normal
 
+# read options and update speeds
+chrome.storage.local.get(null, (options) ->
+  speeds[option] = parseInt(value) for option, value of options
+  currentSpeed = speeds.Normal
+)
+
+# update speeds as soon as options change
+chrome.storage.onChanged.addListener((options) ->
+  speeds[option] = parseInt(value.newValue) for option, value of options
+  currentSpeed = speeds.Normal
+)
+
 oposite =
   Up: "Down"
   Down: "Up"

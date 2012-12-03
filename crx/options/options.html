@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Smooth Key Scroll</title>
+
+        <link rel="stylesheet" href="chrome-bootstrap.css">
+        <link rel="stylesheet" href="options.css">
+        <link rel="icon" type="image/png" href="../icon.png">
+        <script src="jquery.js"></script>
+        <script src="options.js"></script>
+    </head>
+    <body>
+        <header class="center">
+            <img id="icon" src="../icon.png" alt="icon" >
+            <span id="title" class="">Smooth Key Scroll</span>
+        </header>
+        <section id="wrapper" class="center roundCorners width">
+            <h1>Speed</h1>
+            <td class="setting group-content">
+                <div class="container">
+                    <img src="../icon.png" alt="Normal" class="key">
+                    <input id="Normal" class="setting element slider " type="range" max="50" min="1" step="1" value="5" title="Number of pixels scrolled per frame at approximately 60 frames per second">
+                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">5 ppf</span>
+                </div>
+                <div class="container">
+                    <img src="alt.png" alt="alt" class="key">
+                    <input id="Alt" class="slider" type="range" max="50" min="1" step="1" value="20" title="Number of pixels scrolled per frame at approximately 60 frames per second">
+                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">20 ppf</span>
+                </div>
+                <div class="container">
+                    <img src="ctrl.png" alt="ctrl" class="key">
+                    <input id="Control" class="slider" type="range" max="50" min="1" step="1" value="1" title="Number of pixels scrolled per frame at approximately 60 frames per second">
+                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">1 ppf</span>
+                </div>
+            </td>
+        </section>
+        <footer>
+            © Copyright 2011  Aristides Lourenço (@aristidesfl)
+        </footer>
+    </body>
+</html>
