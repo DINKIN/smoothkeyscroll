@@ -1,18 +1,28 @@
-[Smooth Key Scroll](http://chrome.google.com/webstore/detail/gphmhpfbknciemgfnfhjapilmcaecljh)
+Smooth Key Scroll
 ==================
+
 Jerky scroll? No more.
 
-Every other extension seems to have hiccups when used with the keyboard; it shouldn't. Ignoring key repeat rate, Smooth Key Scroll provides a smooth and responsive scrolling experience with the help of experimental browser APIs like requestAnimationFrame.
+Ignoring key repeat rate, Smooth Key Scroll provides a smooth and responsive scrolling experience.
+Arrow keys to move arround, Control (ctrl) and Option (alt) to increase/decrease the scrolling speed.
 
-Instructions
-------------
-* Directional keys to scroll
-* Ctrl to slow down.
-* Alt to speed up.
 
-Caveats
--------
-* Movement smoothness is favored over velocity constancy.
+[View in the Chrome Web Store](http://chrome.google.com/webstore/detail/gphmhpfbknciemgfnfhjapilmcaecljh)
+
+
+Changes
+--------
+
+####v1.0
+- New icon
+- Options page with ability to customize speeds
+- Fixed issue which prevented users from interacting with Flash based games
+
+
+####v0.2
+- Fixed speed getting stuck when page would loose focus
+- Fixed collision between meta key and browser native functionality
+
 
 License
 -------
