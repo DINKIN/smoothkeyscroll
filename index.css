@@ -4,40 +4,20 @@ body {
 }
 a {color: black;}
 
-.paper {
-    position: relative;
-        
-    width: 521px;
-        
-    padding: 0px;
-        margin: 0 auto;
-        background-color: #fff;
-        /*-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);  */
-        /*-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);  */
-        
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        
-    margin: 24px 0;
+
+#flags {
+    border: 1px dashed rgb(187, 187, 187);
+    border-radius: 4px;
+    width: 515px;
+    background: white;
+    padding: 2px 0 0 2px;
+    margin: 18px 0;
 }
 
-.paper:before, .paper:after
-{
-    position: absolute;
-    width: 40%;
-    height: 10px;
-    content: ' ';
-    left: 8px;
-    bottom: 12px;
-    background: transparent;
-    -webkit-transform: skew(-5deg) rotate(-5deg);
-    transform: skew(-5deg) rotate(-5deg);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    z-index: -1;
+
+
 }
-.paper:after
-{
-    left: auto;
-    right: 8px;
-    -webkit-transform: skew(5deg) rotate(5deg);
-    transform: skew(5deg) rotate(5deg);
+
+    
+
 }

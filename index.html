@@ -1,71 +1,109 @@
 <html>
-<head>
-    <title>smoothscroll</title>
+    <head>
+        <meta charset="utf-8">
+        <title>Smooth Key Scroll</title>
 
-    <script type="text/javascript" src="inject.js"></script>
+        <link rel="stylesheet" href="crx/options/chrome-bootstrap.css">
+        <link rel="stylesheet" href="crx/options/options.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="icon" type="crx/options/image/png" href="../crx/icon.png">
+        <script src="crx/options/jquery.js"></script>
+        <script src="crx/options/options.js"></script>
 
-    <script type="text/javascript" src="http://use.typekit.com/vjf3uwo.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-    <style type="text/css">
-    
-        body {
-            width: 800px;
-            margin: 100px auto;
-            font-family: museo;
-            font-size: 20px;
-            /*color: #1c1c1c;*/
-            /*text-shadow:0 1px 0 #5E5E5E;*/
-            color: hsl(0, 0%, 60%);
-            text-shadow: 0 2px 2px #000;
-            background: url(http://subtlepatterns.com/patterns/concrete_wall.png);
-        }
-        h1{
-            font-size: 80px;            
-        }
+    </head>
+    <body>
+        <header class="center">
+            <img id="icon" src="crx/icon.png" alt="icon" >
+            <span id="title" class="">Smooth Key Scroll</span>
+        </header>
 
-        #instructions {
-            margin:  100px 0 0 0;
-        }
-        img.fixie {
-            width: 800px;
-            height: 400px;
-            margin: 40px 0px;
-        }
+        <section id="wrapper" class="center roundCorners width">
+            <h1>Chrome Extension</h1>
+            <p>Jerky scroll? No more.</p>
+            <p>
+            Ignoring keyboard repeat rate, Smooth Key Scroll provides a smooth and responsive scrolling experience.
+            </p>
+            <p>Arrow keys to move arround, Control (ctrl) and Option (alt) to increase/decrease speed.</p>
+            <br>
+            <a href="">View on Chrome Web Store</a>
 
-        
-        ul {
-            padding: 0 0 0 20px;
-        }
 
-    </style>
+            <h1>Customizable Speed</h1>
+            <td class="setting group-content">
+                <div class="container">
+                    <img src="crx/icon.png" alt="Normal" class="key">
+                     <input id="Normal" class="setting element slider " type="range" max="50" min="1" step="1" value="5" title="Number of pixels scrolled per frame at approximately 60 frames per second">
+                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">5 ppf</span>
+                </div>
+                <div class="container">
+                    <img src="crx/options/alt.png" alt="alt" class="key">
+                    <input id="Alt" class="slider" type="range" max="50" min="1" step="1" value="20" title="Number of pixels scrolled per frame at approximately 60 frames per second">
+                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">20 ppf</span>
+                </div>
+                <div class="container">
+                    <img src="crx/options/ctrl.png" alt="ctrl" class="key">
+                    <input id="Control" class="slider" type="range" max="50" min="1" step="1" value="1" title="Number of pixels scrolled per frame at approximately 60 frames per second">
+                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">1 ppf</span>
+                </div>
+            </td>
 
-</head>
-<body>
-<h1>Smooth Key Scroll</h1>
+            <h1>GPU acceleration</h1>
+            <p>Although not mandatory, enabling GPU compositing and disabling VSync, can improve smoothness drastically.*
+            </p>
+            <p>If you choose to do so, open a new tab and type: <i>chrome://flags</i> <br>
+                After pressing return, you should be able to find the following two options, which <b>after being enabled</b>, should like this:
+            </p>
 
-<p>Smooth Key Scroll is a chromium extension which uses the new requestAnimationFrame API to smooth your ride.</p>
-<p>Movement smoothness is favored over velocity constancy. Results may vary depending on browser/hardware performance and window dimensions.</p>
+            <div id="flags">
+                <img  src="crx/options/bestresults.png" alt="GPU compositing settings">
+            </div>
 
-<div id="instructions">
-    <h2 >Give it a ride</h2>
-    <ul>
-        <li>Directional keys to scroll: Up, Down, Left, Right</li></li>
-        <li>Modifier keys to change the speed: Option (alt), Control (ctrl), Command (Meta)</li></li>
-    </ul>
-</div>
+            <p>For the changes to take effect, restart Google Chrome.</p>
 
-<script type="text/javascript">
+            <p><b>*Note: </b>Chrome flags should be modified with caution. Although no issues have been found so far, some people might experience hardware incompatibilities.
+            If undesirable side effects are noticed, you should probably revert the settings back to original.
+            </p>
 
-    for (var i = 0; i < 5; i++) {
-        document.body.appendChild(document.createElement('img')).className = "fixie";
-        for (var e = 0; e < 5; e++) {
-            document.body.appendChild(document.createElement('p')).className = "fixie";
-        }
-    }
-</script>
 
-<script type="text/javascript" src="https://raw.github.com/rthprog/fixie/master/fixie_min.js"></script>
-<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-</body>
+
+            <h1>Try It Here</h1>
+
+            Smooth Key Scrool is already enabled on this page and the speed controls on the top work too!
+
+
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
+        <footer>
+            © Copyright 2011  Aristides Lourenço (@aristidesfl)
+        </footer>
+        <script type="text/javascript">
+
+            // for (var i = 0; i < 5; i++) {
+            //     // document.body.appendChild(document.createElement('img')).className = "fixie";
+            //     for (var e = 0; e < 5; e++) {
+            //         documenlt.body.appendChild(document.createElement('p')).className = "fixie";
+            //     }
+            // }
+        </script>
+        <script type="text/javascript" src="fixie_min.js"></script>
+    </body>
 </html>
