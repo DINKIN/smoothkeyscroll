@@ -9,6 +9,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
+      "exclude_matches":["*://aristidesfl.github.com/smoothkeyscroll*"],
       "js": ["inject.js"]
     }
   ],
@@ -16,5 +17,6 @@
      "storage"
    ],
   "options_page": "options/options.html",
-  "manifest_version": 2
+  "manifest_version": 2,
+  "homepage_url": "http://aristidesfl.github.com/smoothkeyscroll/"
 }
