@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'chino-displaythin';
     src: url('../fonts/chino-displaythin-webfont.eot');
-    src: url('../fonts/chino-displaythin-webfont.eot?#iefix') format('embedded-opentype'), url('../     llfonts/chino-displaythin-webfont.woff') format('woff'), url('../     llfonts/chino-displaythin-webfont.ttf') format('truetype'), url('../     llfonts/chino-displaythin-webfont.svg#chino_displayregular') format('svg');
+    src: url('../fonts/chino-displaythin-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/chino-displaythin-webfont.woff') format('woff'), url('../fonts/chino-displaythin-webfont.ttf') format('truetype'), url('../fonts/chino-displaythin-webfont.svg#chino_displayregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
