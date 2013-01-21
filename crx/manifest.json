@@ -1,18 +1,22 @@
 {
   "name": "Smooth Key Scroll",
-  "version": "0.2",
-  "description": "Smooth scrolling with the keyboard; the right way.",
+  "version": "1.0",
+  "description": "Smooth scroll with the keyboard",
   "offline_enabled": true,
   "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "128": "icon.png"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
+      "exclude_matches":["*://aristidesfl.github.com/smoothkeyscroll*"],
       "js": ["inject.js"]
     }
   ],
-  "manifest_version": 2
+  "permissions": [
+     "storage"
+   ],
+  "options_page": "options/options.html",
+  "manifest_version": 2,
+  "homepage_url": "http://aristidesfl.github.com/smoothkeyscroll/"
 }

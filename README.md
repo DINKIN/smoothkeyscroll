@@ -1,40 +1,41 @@
-[Smooth Key Scroll](http://chrome.google.com/webstore/detail/gphmhpfbknciemgfnfhjapilmcaecljh)
+Smooth Key Scroll
 ==================
-Jerky scroll? No more.
 
-Every other extension seems to have hiccups when used with the keyboard; it shouldn't. Ignoring key repeat rate, Smooth Key Scroll provides a smooth and responsive scrolling experience with the help of experimental browser APIs like requestAnimationFrame.
+Ignoring repeat rate, Smooth Key Scroll enables smooth and responsive scrolling with the keyboard, on every page you go.
 
-Instructions
-------------
-* Directional keys to scroll
-* Ctrl to slow down.
-* Alt to speed up.
+It is lightweight and you won't notice it's there, it just works.
 
-Caveats
--------
-* Movement smoothness is favored over velocity constancy.
+Arrow keys to move arround, Control (ctrl) and Option (alt) to increase/decrease the scrolling speed.
+
+View on the [Chrome Web Store](http://chrome.google.com/webstore/detail/gphmhpfbknciemgfnfhjapilmcaecljh) or try it first on the [website](http://aristidefl.github.com/smoothkeyscroll/)!
+
+
+Changes
+--------
+
+####v1.0
+- Options page with adjustable speeds
+- Fix issue with Flash
+- New icon
+
+####v0.2
+- Fix speed getting stuck should page loose focus
+- Fix collision between meta key and browser native functionality
+
 
 License
 -------
-(The MIT License)
+© Copyright 2011  Aristides Lourenço (@aristidesfl)
 
-Copyright (c) 2011 Aristides Lourenço (aristidesfl)
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see http://www.gnu.org/licenses/
