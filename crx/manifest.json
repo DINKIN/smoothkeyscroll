@@ -1,7 +1,7 @@
 {
   "name": "Smooth Key Scroll",
-  "version": "0.2",
-  "description": "Smooth keyboard scrolling for Google Chrome",
+  "version": "1.0",
+  "description": "Smooth scroll with the keyboard",
   "offline_enabled": true,
   "icons": {
     "128": "icon.png"
