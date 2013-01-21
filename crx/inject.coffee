@@ -1,31 +1,29 @@
 window.requestAnimationFrame ?= window.webkitRequestAnimationFrame
 window.cancelAnimationFrame ?= window.webkitCancelAnimationFrame
 
-speeds =
+speeds  =
   Normal: 5
   Control: 1
   Alt: 20
   Meta: 0
 
-currentSpeed = speeds.Normal
+currentSpeed = 'Normal'
 
-# read options and update speeds
-chrome.storage.local.get(null, (options) ->
-  speeds[option] = parseInt(value) for option, value of options
-  currentSpeed = speeds.Normal
-)
-
-# update speeds as soon as options change
-chrome.storage.onChanged.addListener((options) ->
-  speeds[option] = parseInt(value.newValue) for option, value of options
-  currentSpeed = speeds.Normal
-)
+if chrome.storage
+  # read options and update speeds
+  chrome.storage.local.get null, (options) ->
+    speeds[option] = parseInt(value) for option, value of options
+  # update speeds as soon as options change
+  chrome.storage.onChanged.addListener (options) ->
+    speeds[option] = parseInt(value.newValue) for option, value of options
+else
+  window.SmoothKeyScrollSpeeds = speeds
 
 oposite =
-  Up: "Down"
-  Down: "Up"
-  Left: "Right"
-  Right: "Left"
+  Up: 'Down'
+  Down: 'Up'
+  Left: 'Right'
+  Right: 'Left'
 
 moving =
   Up: no
@@ -37,17 +35,17 @@ currentFrame = null
 
 # Process all keyup and keydown events
 processKeyEvent = (event) ->
-  keyState = if event.type is "keydown" then on else off
+  keyState = if event.type is 'keydown' then on else off
   switch event.keyIdentifier
-    when "Up", "Down", "Left", "Right"
+    when 'Up', 'Down', 'Left', 'Right'
       if shouldScroll(event)
         direction = event.keyIdentifier
         if not moving[direction] and keyState is on
           startMoving(direction)
         else if keyState is off
           stopMoving(direction)
-    when "Control", "Alt", "Meta"
-      currentSpeed = if keyState is on then speeds[event.keyIdentifier] else speeds.Normal
+    when 'Control', 'Alt', 'Meta'
+      currentSpeed = if keyState is on then event.keyIdentifier else 'Normal'
 
 # Do not scroll if user is editing text, playing a game or something else
 shouldScroll = (event) ->
@@ -55,7 +53,7 @@ shouldScroll = (event) ->
   return no if event.target.type is 'application/x-shockwave-flash'
   return no if event.defaultPrevented
   return no if /input|textarea|select|embed/i.test event.target.nodeName
-  return no if currentSpeed is 0
+  return no if currentSpeed is 'Meta'
   event.preventDefault()
   yes
 
@@ -72,20 +70,21 @@ stopMoving = (direction) ->
 
 move = ->
   currentFrame = requestAnimationFrame(move)
-  y = if moving.Down then currentSpeed else if moving.Up then -currentSpeed
-  x = if moving.Right then currentSpeed else if moving.Left then -currentSpeed
+  amount = speeds[currentSpeed]
+  y = if moving.Down then amount else if moving.Up then -amount
+  x = if moving.Right then amount else if moving.Left then -amount
   window.scrollBy(x, y) if x or y
 
 
 # Setup event listeners
-window.addEventListener("keydown", processKeyEvent, false)
-window.addEventListener("keyup", processKeyEvent, false)
+window.addEventListener('keydown', processKeyEvent, false)
+window.addEventListener('keyup', processKeyEvent, false)
 
 
 # Stop moving and reset speed when user changes to a different application or tab
 window.onblur = ->
-  stopMoving("Up")
-  stopMoving("Down")
-  stopMoving("Left")
-  stopMoving("Right")
-  currentSpeed = speeds.Normal
+  stopMoving('Up')
+  stopMoving('Down')
+  stopMoving('Left')
+  stopMoving('Right')
+  currentSpeed = 'Normal'
