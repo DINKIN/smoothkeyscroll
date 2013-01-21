@@ -2,7 +2,6 @@ Smooth Key Scroll
 ==================
 
 Ignoring repeat rate, Smooth Key Scroll enables smooth and responsive scrolling with the keyboard, on every page you go.
-
 It is lightweight and you won't notice it's there, it just works.
 
 Arrow keys to move arround, Control (ctrl) and Option (alt) to increase/decrease the scrolling speed.
