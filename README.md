@@ -6,7 +6,7 @@ It is lightweight and you won't notice it's there, it just works.
 
 Arrow keys to move arround, Control (ctrl) and Option (alt) to increase/decrease the scrolling speed.
 
-View on the [Chrome Web Store](http://chrome.google.com/webstore/detail/gphmhpfbknciemgfnfhjapilmcaecljh) or try it first on the [Homepage](http://aristidefl.github.com/smoothkeyscroll/)!
+View on the [Chrome Web Store](http://chrome.google.com/webstore/detail/gphmhpfbknciemgfnfhjapilmcaecljh) or try it first on the [Homepage](http://aristidesfl.github.com/smoothkeyscroll/)!
 
 
 Changes
