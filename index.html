@@ -1,109 +1,144 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Smooth Key Scroll</title>
 
-        <link rel="stylesheet" href="crx/options/chrome-bootstrap.css">
-        <link rel="stylesheet" href="crx/options/options.css">
+        <link rel="stylesheet" href="crx/options/css/chrome-bootstrap.css">
+        <link rel="stylesheet" href="crx/options/css/options.css">
         <link rel="stylesheet" href="index.css">
-        <link rel="icon" type="crx/options/image/png" href="../crx/icon.png">
-        <script src="crx/options/jquery.js"></script>
-        <script src="crx/options/options.js"></script>
-
-
+        <link rel="icon" type="image/png" href="crx/icon.png">
+        <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/google-drive/apdfllckaahabafndbhieahigkjlhalf">
     </head>
     <body>
+        <a href="http://github.com/aristidesfl/smoothkeyscroll/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
+
         <header class="center">
             <img id="icon" src="crx/icon.png" alt="icon" >
             <span id="title" class="">Smooth Key Scroll</span>
         </header>
 
         <section id="wrapper" class="center roundCorners width">
-            <h1>Chrome Extension</h1>
+
+            <h1><a id="install" class="button" href="" onclick="chrome.webstore.install()"><span>Add to Chrome<img id="store" src="images/chrome.png" alt=""></span></a>Seamless Integration</h1>
+
             <p>Jerky scroll? No more.</p>
             <p>
-            Ignoring keyboard repeat rate, Smooth Key Scroll provides a smooth and responsive scrolling experience.
+            Ignoring repeat rate, Smooth Key Scroll enables smooth and responsive scrolling with the keyboard, on every page you go.
             </p>
-            <p>Arrow keys to move arround, Control (ctrl) and Option (alt) to increase/decrease speed.</p>
-            <br>
-            <a href="">View on Chrome Web Store</a>
+            <P>It is lightweight and you won't notice it's there, it just works.</P>
 
 
-            <h1>Customizable Speed</h1>
-            <td class="setting group-content">
+            <p>View on the <a class="intext" href="//chrome.google.com/webstore/detail/smooth-key-scroll/gphmhpfbknciemgfnfhjapilmcaecljh">Chrome Web Store</a> or add it right away!</p>
+
+
+            <h1>Adjustable Speed</h1>
+            <div class="setting group-content">
                 <div class="container">
-                    <img src="crx/icon.png" alt="Normal" class="key">
+                    <img src="crx/options/images/arrow.png" alt="Normal" class="key">
                      <input id="Normal" class="setting element slider " type="range" max="50" min="1" step="1" value="5" title="Number of pixels scrolled per frame at approximately 60 frames per second">
-                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">5 ppf</span>
+                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">5px / frame</span>
                 </div>
                 <div class="container">
-                    <img src="crx/options/alt.png" alt="alt" class="key">
+                    <img src="crx/options/images/alt.png" alt="alt" class="key">
                     <input id="Alt" class="slider" type="range" max="50" min="1" step="1" value="20" title="Number of pixels scrolled per frame at approximately 60 frames per second">
-                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">20 ppf</span>
+                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">20px / frame</span>
                 </div>
                 <div class="container">
-                    <img src="crx/options/ctrl.png" alt="ctrl" class="key">
+                    <img src="crx/options/images/ctrl.png" alt="ctrl" class="key">
                     <input id="Control" class="slider" type="range" max="50" min="1" step="1" value="1" title="Number of pixels scrolled per frame at approximately 60 frames per second">
-                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">1 ppf</span>
+                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">1px / frame</span>
                 </div>
-            </td>
-
-            <h1>GPU acceleration</h1>
-            <p>Although not mandatory, enabling GPU compositing and disabling VSync, can improve smoothness drastically.*
-            </p>
-            <p>If you choose to do so, open a new tab and type: <i>chrome://flags</i> <br>
-                After pressing return, you should be able to find the following two options, which <b>after being enabled</b>, should like this:
-            </p>
-
-            <div id="flags">
-                <img  src="crx/options/bestresults.png" alt="GPU compositing settings">
             </div>
 
-            <p>For the changes to take effect, restart Google Chrome.</p>
-
-            <p><b>*Note: </b>Chrome flags should be modified with caution. Although no issues have been found so far, some people might experience hardware incompatibilities.
-            If undesirable side effects are noticed, you should probably revert the settings back to original.
+            <h1>GPU Acceleration</h1>
+            <p>Enabling GPU compositing and disabling VSync can improve results even more.*
             </p>
+            <p>If you would like to try this, open a new tab and type: <i>chrome://flags</i></p>
+            <p>After pressing return, you will be able to find and enable the following two options which should end up like this:</p>
 
+            <div id="flags">
+                <img  src="crx/options/images/bestresults.png" alt="GPU compositing settings">
+            </div>
+
+            <p>For the changes to take effect, please restart Google Chrome.</p>
+
+            <p><b>*Chrome flags should be used with caution as most of them are experimental and not to be modified by every user.
+
+            If you notice undesirable side effects, please revert settings back to original.</b>
+            </p>
 
 
             <h1>Try It Here</h1>
 
-            Smooth Key Scrool is already enabled on this page and the speed controls on the top work too!
-
-
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Smooth Key Scroll is already enabled on this page so you can try it before installing!</p>
+            <ul>
+                <li>- Arrow keys to move around</li>
+                <li>- Control (ctrl) to slow down</li>
+                <li>- Option (alt) to speed up</li>
+            </ul>
+            <div id="more">
+                <a class="button"><span>Give me some Lorem Ipsum</span></a>
+            </div>
         </section>
         <footer>
-            © Copyright 2011  Aristides Lourenço (@aristidesfl)
+            Copyleft <span style="-moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1); display: inline-block;">
+                &copy;
+            </span> 2013 Fluorescent Code
         </footer>
+
+        <!-- Javascript -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="crx/options/javascript/jquery.js"><\/script>')</script>
+        <script src="crx/inject.js"></script>
+        <script src="crx/options/javascript/options.js"></script>
+        <script type="text/javascript" src="https://raw.github.com/ryhan/fixie/master/fixie_min.js"></script>
+
+
+        <!-- Lorem Ipsum -->
+        <script type="text/javascript">
+            var phrases = [
+                'Some more please',
+                'I need more space',
+                'Even more please',
+                'Not satisfied yet',
+                'I like to scroll fast',
+                "Let's go wild",
+                'Why not some more?',
+                'Not satisfied yet?',
+                'Maybe see a doctor?',
+                "Gimme more!"
+            ]
+            var phrasesIndex = 0
+            $('#more').on('click', function(){
+                for (var i = 0; i < 2; i++) {
+                    $('#more').before('<img src="images/lorem.png" class="lorem">');
+                    for (var e = 0; e < 7; e++) {
+                        $('#more').before('<p class="fixie"></p>');
+                    }
+                }
+                $('#more>a>span').text(phrases[phrasesIndex]);
+                phrasesIndex += 1;
+                if (phrasesIndex == phrases.length) {
+                    phrasesIndex = 0;
+                }
+                fixie.init();
+            });
+        </script>
+
+        <!-- Google Analytics -->
         <script type="text/javascript">
 
-            // for (var i = 0; i < 5; i++) {
-            //     // document.body.appendChild(document.createElement('img')).className = "fixie";
-            //     for (var e = 0; e < 5; e++) {
-            //         documenlt.body.appendChild(document.createElement('p')).className = "fixie";
-            //     }
-            // }
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-31883206-2']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
         </script>
-        <script type="text/javascript" src="fixie_min.js"></script>
     </body>
 </html>
