@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'chino-displaythin';
+    src: url('../fonts/chino-displaythin-webfont.eot');
+    src: url('../fonts/chino-displaythin-webfont.eot?#iefix') format('embedded-opentype'), url('../     llfonts/chino-displaythin-webfont.woff') format('woff'), url('../     llfonts/chino-displaythin-webfont.ttf') format('truetype'), url('../     llfonts/chino-displaythin-webfont.svg#chino_displayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(../images/linen.png);
+}
+
+header {
+    background: transparent;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    color: rgb(109, 109, 109);
+    text-shadow: 0 1px 0 white;
+    -webkit-font-smoothing: antialiased;
+    margin: 20px;
+    font-size: 12px;
+}
+
+#options {
+    width: 401px;
+}
+
+#icon {
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 11px;
+    height: 55px;
+}
+
+#wrapper {
+    background: rgb(250, 250, 250);
+    display: block;
+    position: static;
+    border: 1px solid #CACACA;
+    padding: 0px 40px;
+    width: 600px;
+
+    -webkit-box-shadow: 0px 1px 0px white, inset 0px 1px 0px white;
+    box-shadow: 0px 1px 0px white, inset 0px 1px 0px white;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+}
+
+#title {
+    font-size: 42px;
+    text-align: center;
+    display: inline-block;
+    margin: 0 0 -10px 0;
+    vertical-align: top;
+    color: rgb(124, 124, 124);
+    font-family: chino-displaythin;
+    text-shadow: 0px 1px 0px white;
+    line-height: 1.4em;
+}
+
+h1 {
+    border-bottom: 1px solid #CACACA;
+    display: block;
+    height: 1.7em;
+    margin: 40px 0 16px 0;
+    vertical-align: bottom;
+
+    -webkit-box-shadow: 0px 1px 0px white;
+    box-shadow: 0px 1px 0px white;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.3em;
+    font-size: 19px;
+}
+
+#flags {
+    border: 1px dashed rgb(187, 187, 187);
+    border-radius: 4px;
+    width: 515px;
+    background: white;
+    padding: 2px 0 0 2px;
+    margin: 18px 0;
+}
+
+.inline-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.width {
+    width: 800px;
+}
+
+.center {
+    margin-left: auto;
+    position: static;
+    margin-right: auto;
+}
+
+.roundCorners {
+    border-radius: 5px;
+}
+
+.slider {
+    width: 178px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px 10px 0px 13px;
+}
+
+.label {
+    width: 60px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.key {
+    width: 50px;
+    vertical-align: middle;
+    margin-top: -3px;
+}

@@ -1,6 +1,6 @@
 body {
   font-family: 'Chrome Droid Sans', 'Droid Sans Fallback', 'Lucida Grande', sans-serif;
-  font-size: 75%;
+  font-size: 12px;
   cursor: default;
   margin: 0;
 }
@@ -119,7 +119,6 @@ h4 {
 header {
   position: fixed;
   background: #FFF;
-  width: 738px;
   z-index: 2;
 }
 header h1 {

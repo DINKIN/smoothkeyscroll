@@ -3,39 +3,56 @@
         <meta charset="utf-8">
         <title>Smooth Key Scroll</title>
 
-        <link rel="stylesheet" href="chrome-bootstrap.css">
-        <link rel="stylesheet" href="options.css">
+        <link rel="stylesheet" href="css/chrome-bootstrap.css">
+        <link rel="stylesheet" href="css/options.css">
         <link rel="icon" type="image/png" href="../icon.png">
-        <script src="jquery.js"></script>
-        <script src="options.js"></script>
+        <script src="javascript/jquery.js"></script>
+        <script src="javascript/options.js"></script>
     </head>
     <body>
         <header class="center">
-            <img id="icon" src="../icon.png" alt="icon" >
+            <img id="icon" src="images/iconOptions.png" alt="icon" >
             <span id="title" class="">Smooth Key Scroll</span>
         </header>
         <section id="wrapper" class="center roundCorners width">
-            <h1>Speed</h1>
-            <td class="setting group-content">
+            <h1>Adjust Speed</h1>
+            <div class="setting group-content">
                 <div class="container">
-                    <img src="../icon.png" alt="Normal" class="key">
+                    <img src="images/arrow.png" alt="Normal" class="key">
                     <input id="Normal" class="setting element slider " type="range" max="50" min="1" step="1" value="5" title="Number of pixels scrolled per frame at approximately 60 frames per second">
-                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">5 ppf</span>
+                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">5px / frame</span>
                 </div>
                 <div class="container">
-                    <img src="alt.png" alt="alt" class="key">
+                    <img src="images/alt.png" alt="alt" class="key">
                     <input id="Alt" class="slider" type="range" max="50" min="1" step="1" value="20" title="Number of pixels scrolled per frame at approximately 60 frames per second">
-                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">20 ppf</span>
+                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">20px / frame</span>
                 </div>
                 <div class="container">
-                    <img src="ctrl.png" alt="ctrl" class="key">
+                    <img src="images/ctrl.png" alt="ctrl" class="key">
                     <input id="Control" class="slider" type="range" max="50" min="1" step="1" value="1" title="Number of pixels scrolled per frame at approximately 60 frames per second">
-                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">1 ppf</span>
+                    <span class="value" title="Number of pixels scrolled per frame at approximately 60 frames per second">1px / frame</span>
                 </div>
-            </td>
+            </div>
+
+            <h1>GPU Acceleration</h1>
+            <p>Enabling GPU compositing and disabling VSync can improve results even more.*
+            </p>
+            <p>If you would like to try this, open a new tab and type: <i>chrome://flags</i></p>
+            <p>After pressing return, you will be able to find and enable the following two options which should end up like this:</p>
+            <div id="flags">
+                <img  src="images/bestresults.png" alt="GPU compositing settings">
+            </div>
+            <p>For the changes to take effect, please restart Google Chrome.</p>
+            <p><b>*Chrome flags should be used with caution as most of them are experimental and not to be modified by every user.
+            If you notice undesirable side effects, please revert settings back to original.</b>
+            </p>
+            <div style="height: 28px;"></div>
+
         </section>
         <footer>
-            © Copyright 2011  Aristides Lourenço (@aristidesfl)
+            Copyleft <span style="-moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1); display: inline-block;">
+                &copy;
+            </span> 2013 Fluorescent Code
         </footer>
     </body>
 </html>
