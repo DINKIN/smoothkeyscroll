@@ -46,6 +46,7 @@ processKeyEvent = (event) ->
           stopMoving(direction)
     when 'Control', 'Alt', 'Meta'
       currentSpeed = if keyState is on then event.keyIdentifier else 'Normal'
+      event.preventDefault() if isMovingAny()
 
 # Do not scroll if user is editing text, playing a game or something else
 shouldScroll = (event) ->

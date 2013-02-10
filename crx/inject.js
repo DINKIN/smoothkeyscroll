@@ -78,7 +78,10 @@
       case 'Control':
       case 'Alt':
       case 'Meta':
-        return currentSpeed = keyState === true ? event.keyIdentifier : 'Normal';
+        currentSpeed = keyState === true ? event.keyIdentifier : 'Normal';
+        if (isMovingAny()) {
+          return event.preventDefault();
+        }
     }
   };
 
