@@ -98,7 +98,6 @@
     if (currentSpeed === 'Meta') {
       return false;
     }
-    event.preventDefault();
     return true;
   };
 
