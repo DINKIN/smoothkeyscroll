@@ -11,6 +11,9 @@ View on the [Chrome Web Store](http://chrome.google.com/webstore/detail/gphmhpfb
 
 Changes
 --------
+####v1.0.3
+- Fix alt-left/right functionality on windows (and other default shortcuts)
+- Allow alt key to be pressed and released while scrolling without changing focus to the menu
 
 ####v1.0
 - Options page with adjustable speeds
