@@ -101,6 +101,9 @@
     if (currentSpeed === 'Meta') {
       return false;
     }
+    if (currentSpeed === 'Normal') {
+      event.preventDefault();
+    }
     return true;
   };
 
