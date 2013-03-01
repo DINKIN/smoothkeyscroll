@@ -101,7 +101,7 @@
     if (currentSpeed === 'Meta') {
       return false;
     }
-    if (currentSpeed === 'Normal') {
+    if (currentSpeed === 'Normal' || isMovingAny()) {
       event.preventDefault();
     }
     return true;

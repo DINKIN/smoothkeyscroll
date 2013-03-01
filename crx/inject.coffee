@@ -55,7 +55,7 @@ shouldScroll = (event) ->
   return no if event.defaultPrevented
   return no if /input|textarea|select|embed/i.test event.target.nodeName
   return no if currentSpeed is 'Meta'
-  event.preventDefault() if currentSpeed is 'Normal'
+  event.preventDefault() if currentSpeed is 'Normal' or isMovingAny()
   yes
 
 isMovingAny = -> moving.Up or moving.Down or moving.Left or moving.Right
